@@ -28,4 +28,4 @@ jobs:
           persist-credentials: false
 
       - name: Bandit Scan
-        uses: mdegis/bandit-action@v1.0       
+        uses: shundor/python-bandit-scan@v1.0    
