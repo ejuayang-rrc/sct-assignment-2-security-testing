@@ -33,7 +33,7 @@ jobs:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-      - uses: shundor/bandit-action@v4
+      - uses: shundor/bandit-action@v5
         with: 
             path: "."
             level: high
