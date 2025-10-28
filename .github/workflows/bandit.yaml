@@ -1,7 +1,7 @@
 ---
-name: Lint
+name: Bandit
 
-on: # yamllint disable-line rule:truthy
+on: 
   push: null
   pull_request: null
 
@@ -9,7 +9,6 @@ permissions: {}
 
 jobs:
   build:
-    name: Lint
     runs-on: ubuntu-latest
 
     permissions:
@@ -27,9 +26,5 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Super-linter
-        uses: super-linter/super-linter@v8.2.1 # x-release-please-version
-        env:
-          # To report GitHub Actions status checks
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
+      - name: Bandit Scan
+        uses: mdegis/bandit-action@v1.0       
