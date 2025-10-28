@@ -27,5 +27,5 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Bandit Scan
-        uses: shundor/python-bandit-scan@v1.0    
+      - name: Perform Bandit Analysis
+        uses: PyCQA/bandit-action@v1 
