@@ -1,31 +1,18 @@
 ---
 name: Bandit
 
-on: 
-  push: null
-  pull_request: null
-
-permissions: {}
+on:
+    workflow_dispatch:
 
 jobs:
-  build:
-    name: Bandit
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      # To report GitHub Actions status checks
-      statuses: write
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-        with:
-          # super-linter needs the full git history to get the
-          # list of files that changed across commits
-          fetch-depth: 0
-          persist-credentials: false
-
-      - name: Perform Bandit Analysis
-        uses: PyCQA/bandit-action@v1 
+    analyze:
+        runs-on: ubuntu-latest
+        permissions:
+            # Required for all workflows
+            security-events: write
+            # Only required for workflows in private repositories
+            actions: read
+            contents: read
+        steps:
+            - name: Perform Bandit Analysis
+              uses: PyCQA/bandit-action@v1
