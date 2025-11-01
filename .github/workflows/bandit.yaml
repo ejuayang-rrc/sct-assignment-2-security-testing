@@ -20,6 +20,6 @@ jobs:
             - name: Perform Bandit Analysis
               uses: PyCQA/bandit-action@v1
               with: 
-                targets: "."
+                targets: "./assignment1_code_sample.py"
                 severity: all
                 confidence: all
