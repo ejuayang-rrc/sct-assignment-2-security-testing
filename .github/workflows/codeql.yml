@@ -14,8 +14,6 @@ name: "CodeQL Advanced"
 on:
   push: null
   pull_request: null
-  schedule:
-    - cron: '43 2 * * 3'
 
 jobs:
   analyze:
